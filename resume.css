@@ -1,0 +1,349 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*头像阴影动画*/
+@keyframes photo-shadow {
+	0% {
+		box-shadow: 0 0 6px 6px rgba(255, 255, 255, 20%);
+	}
+
+	25% {
+		box-shadow: 0 0 8px 8px rgba(255, 255, 255, 20%);
+	}
+
+	50% {
+		box-shadow: none;
+	}
+
+	100% {
+		box-shadow: 0 0 6px 6px rgba(255, 255, 255, 20%);
+	}
+}
+
+@keyframes experience-shadow {
+	0% {
+		box-shadow: 0 0 4px 4px rgba(24, 142, 238, 20%)
+	}
+
+	25% {
+		box-shadow: 0 0 7px 7px rgba(24, 142, 238, 20%);
+	}
+
+	50% {
+		box-shadow: none;
+	}
+
+	100% {
+		box-shadow: 0 0 4px 4px rgba(24, 142, 238, 20%);
+	}
+}
+
+html,
+body {
+	height: 100%;
+}
+
+.resume {
+	display: flex;
+	flex-direction: row;
+	height: auto;
+}
+
+.resume-item {
+	display: flex;
+	flex: 1;
+}
+
+/*左边*/
+.resume .left {
+	color: white;
+	align-items: center;
+	background: #188eee url(http://coding.imweb.io/img/project/resume/bg.png);
+}
+
+/*左边内容区*/
+.block-content {
+	display: flex;
+	flex-direction: column;
+	margin: 50px auto;
+}
+
+/*简历头像*/
+.photo {
+	display: block;
+	margin: 20px auto;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	background-color: white;
+	background-image: url(./img/photo.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-clip: content-box;
+	box-shadow: 0 0 0 6px rgba(255, 255, 255, 30%);
+}
+
+.photo:hover {
+	animation-name: photo-shadow;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.name {
+	font-size: 1.75em;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.job {
+	font-size: 1.18em;
+	text-align: center;
+}
+
+/*联系方式列表*/
+.info-list {
+	list-style: none outside none;
+	margin: 40px auto;
+}
+
+.info-list .info-item:not(:first-child) {
+	margin-top: 10px;
+}
+
+.info-list .iconfont {
+	font-size: 1em;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin-right: 5px;
+	border: 1px solid #ccc;
+	border-radius: 50%;
+	text-align: center;
+}
+
+.info-list .iconfont::before {
+	line-height: 22px;
+}
+
+.info-item a {
+	text-decoration: none;
+	color: white;
+}
+
+/*信息表格*/
+.info-table {
+	margin: 0 auto;
+	height: 100px;
+	padding: 10px 10px 10px 0;
+	border-radius: 10px;
+	box-shadow: 0 0 0 1.5px #0e6ab8, 0 0 0 3.5px #2b9eff;
+}
+
+.info-table td {
+	padding-left: 15px;
+}
+
+/*右边部分*/
+.resume .right {
+	flex-direction: column;
+	padding:0 20px;
+	background-color: rgb(245, 245, 245);
+	/* z-index: -2; */
+}
+
+.hd-tt{
+	color: #188eee;
+	font-size: 1.25em;
+	margin-top: 60px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+.hd-tt::before,.hd-tt::after{
+	content: "";
+	height: 1px;
+	width: 37%;
+	margin-top: 16px;
+	display: block;
+	background: silver;
+}
+.hd-tt::before{
+	float: left;
+}
+.hd-tt::after{
+	float: right;
+}
+
+.experience,
+.skill {
+	display: flex;
+	flex-direction: column;
+
+}
+
+.experience-list,
+.skill-list {
+	list-style: none outside none;
+	position: relative;
+}
+
+.experience-list::before {
+	content: "";
+	height: 100%;
+	width: 1px;
+	display: inline-block;
+	position: absolute;
+	margin-left: 45px;
+	margin-top: 5px;
+	background-image: linear-gradient(to bottom, #808080, rgba(128, 128, 128, 0));
+}
+
+/*工作经历前的圆点*/
+.experience-item .round {
+	display: inline-block;
+	margin-left: -25px;
+	margin-top: 5px;
+	margin-bottom: 50px;
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: #188eee;
+	box-shadow: 0 0 0 4px rgba(24, 142, 238, 30%);
+}
+
+.experience-item:hover .round {
+	animation-name: experience-shadow;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.experience-item {
+	margin-left: 40px;
+	padding-left: 25px;
+}
+
+.skill-item {
+	margin: 0px 40px 40px 20px;
+}
+
+/*技能的进度条*/
+.skill-item .progress-bar {
+	height: 4px;
+	width: 100%;
+	position: relative;
+	background: silver;
+	border-radius: 2px;
+}
+
+/*进度条长度*/
+.progress-bar .bar-percent {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	border-radius: 2px;
+	background-image: linear-gradient(to right, #117ad4 18%, #188eee, #10b0ed);
+	transform-origin: left top;
+}
+
+.skill-item:nth-of-type(1) .progress-bar .bar-percent {
+	transform: scaleX(0.95);
+}
+
+.skill-item:nth-of-type(2) .progress-bar .bar-percent {
+	transform: scaleX(0.9);
+}
+
+.skill-item:nth-of-type(3) .progress-bar .bar-percent {
+	transform: scaleX(0.85);
+}
+
+.skill-item:hover .bar-percent {
+	animation: progressInit 0.6s both;
+}
+
+@keyframes progressInit {
+	0% {
+		transform: scaleX(0);
+	}
+
+}
+
+.experience .content,
+.skill .content {
+	font-size: 1em;
+	line-height: 1.5;
+	margin: 6px 30px 22px 0;
+	color: #808080;
+}
+
+.grade {
+	display: inline-block;
+	position: absolute;
+	right: 40px;
+	text-align: center;
+	font-size: 0.75em;
+	width: 40px;
+	color: #808080;
+	border-radius: 15px;
+	border: 1px solid #808080;
+}
+
+@media(max-width: 768px) {
+	.resume {
+		display: block;
+	}
+
+	.resume-item {
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 100vw;
+	}
+
+	.resume .right {
+		padding-left: 0;
+		flex-direction: row;
+	}
+
+	.job {
+		font-size: 0.95em;
+	}
+
+	.hd-tt {
+		margin-top: 30px;
+		margin-bottom: 0px;
+	}
+
+	.experience .content,
+	.skill .content {
+		font-size: 0.85em;
+		margin: 12px 20px 5px 0;
+	}
+
+	.experience-item {
+		margin-left: 20px;
+		padding-left: 20px;
+	}
+
+	.experience-list::before {
+		margin-left: 20px;
+	}
+
+	.work,
+	.content {
+		font-size: 0.9em;
+		margin-top: 10px;
+	}
+
+	.skill {
+		flex: 1;
+	}
+
+	.skill-item {
+		margin: 0px 20px 20px 20px;
+	}
+}
