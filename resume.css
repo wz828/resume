@@ -90,6 +90,8 @@ body {
 	background-size: cover;
 	background-clip: content-box;
 	box-shadow: 0 0 0 6px rgba(255, 255, 255, 30%);
+	-moz-box-shadow: 0 0 0 6px rgba(255, 255, 255, 30%);
+	-webkit-box-shadow: 0 0 0 6px rgba(255, 255, 255, 30%);
 }
 
 .photo:hover {
